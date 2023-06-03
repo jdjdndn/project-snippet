@@ -1,0 +1,40 @@
+{
+  "name": "project-snippet",
+  "version": "1.0.8",
+  "description": "项目导出变量片段",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "dev": "rollup --config rollup.config.js -w",
+    "build": "rollup --config rollup.config.js",
+    "pub": "npm version patch && npm publish"
+  },
+  "author": "yu cheng",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jdjdndn/project-snippet.git"
+  },
+  "homepage": "https://github.com/jdjdndn/project-snippet",
+  "keywords": [
+    "webpack",
+    "vite",
+    "vscode",
+    "snippet"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/plugin-syntax-jsx": "^7.21.4",
+    "@babel/preset-env": "^7.22.4",
+    "@babel/preset-typescript": "^7.21.5",
+    "fast-glob": "^3.2.12",
+    "rollup": "^3.23.0"
+  },
+  "dependencies": {
+    "watchpack": "^2.4.0"
+  }
+}
