@@ -1,6 +1,6 @@
 {
   "name": "project-snippet",
-  "version": "1.0.8",
+  "version": "1.0.0",
   "description": "项目导出变量片段",
   "main": "dist/index.js",
   "directories": {
@@ -31,10 +31,9 @@
     "@babel/plugin-syntax-jsx": "^7.21.4",
     "@babel/preset-env": "^7.22.4",
     "@babel/preset-typescript": "^7.21.5",
+    "chokidar": "^3.5.3",
     "fast-glob": "^3.2.12",
     "rollup": "^3.23.0"
   },
-  "dependencies": {
-    "watchpack": "^2.4.0"
-  }
+  "dependencies": {}
 }

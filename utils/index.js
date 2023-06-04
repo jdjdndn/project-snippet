@@ -1,3 +1,5 @@
+const os = require('os')
+const path = require('path')
 /**
  * 获取资源真实路径
  * @param {*} resource 资源路径
@@ -40,7 +42,35 @@ function getChooseList(list, options = {}) {
   return "${1|" + arr.join(",") + "|}";
 }
 
+const isWindows = os.platform() === 'win32'
+
+const windowsSlashRE = /\\/g
+
+function slash(p) {
+  return p.replace(windowsSlashRE, '/')
+}
+
+function normalizePath(id) {
+  return path.posix.normalize(isWindows ? slash(id) : id)
+}
+
+const camelizeRE = /-(\w)/g;
+
+const cacheStringFunction = (fn) => {
+  const cache = /* @__PURE__ */ Object.create(null);
+  return (str) => {
+    const hit = cache[str];
+    return hit || (cache[str] = fn(str));
+  };
+};
+
+const camelize = cacheStringFunction((str) => {
+  return str.replace(camelizeRE, (_, c) => c ? c.toUpperCase() : "");
+});
+
 module.exports = {
   getRealResource,
-  getChooseList
+  getChooseList,
+  normalizePath,
+  camelize
 }
